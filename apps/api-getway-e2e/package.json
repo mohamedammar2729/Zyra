@@ -1,0 +1,26 @@
+{
+  "name": "@zyra/api-getway-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@zyra/api-getway"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/api-getway-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@zyra/api-getway:build",
+          "@zyra/api-getway:serve"
+        ]
+      }
+    }
+  }
+}
