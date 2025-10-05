@@ -46,3 +46,9 @@ Thumbs.db
 test-output
 
 /generated/prisma
+
+.github
+
+# Next.js
+.next
+out
