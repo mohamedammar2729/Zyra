@@ -1,9 +1,29 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
+}
+
+model images {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  file_id String
+  url     String
+  userId  String? @unique @db.ObjectId
+  users   users?  @relation(fields: [userId], references: [id])
+}
+
+model users {
+  // @map("_id") → in MongoDB, the real field is called _id, but Prisma lets you call it id in your code.
+  // @db.ObjectId → tells Prisma this is a MongoDB ObjectId type.
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  password  String?
+  name      String
+  following String[]
+  avatar    images?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
