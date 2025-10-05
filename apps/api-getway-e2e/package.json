@@ -4,7 +4,7 @@
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@zyra/api-getway"
+      "api-getway"
     ],
     "targets": {
       "e2e": {
@@ -17,8 +17,8 @@
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@zyra/api-getway:build",
-          "@zyra/api-getway:serve"
+          "api-getway:build",
+          "api-getway:serve"
         ]
       }
     }

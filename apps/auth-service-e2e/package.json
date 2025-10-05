@@ -4,7 +4,7 @@
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@zyra/auth-service"
+      "auth-service"
     ],
     "targets": {
       "e2e": {
@@ -17,8 +17,8 @@
           "passWithNoTests": true
         },
         "dependsOn": [
-          "@zyra/auth-service:build",
-          "@zyra/auth-service:serve"
+          "auth-service:build",
+          "auth-service:serve"
         ]
       }
     }
