@@ -1,5 +1,5 @@
 {
-  "name": "@zyra/api-getway",
+  "name": "@./api-getway",
   "version": "0.0.1",
   "private": true,
   "nx": {

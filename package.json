@@ -1,14 +1,16 @@
 {
-  "name": "@zyra/source",
+  "name": "@./source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "npx nx run-many --target=serve --all",
-    "auth-docs": "node apps/auth-service/src/swagger.js"
+    "auth-docs": "node apps/auth-service/src/swagger.js",
+    "user-ui": "npx nx run-many --target=dev --all --projects=user-ui"
   },
   "private": true,
   "dependencies": {
     "@prisma/client": "^6.16.3",
+    "@tanstack/react-query": "^5.90.2",
     "axios": "^1.11.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
@@ -22,12 +24,14 @@
     "ioredis": "^5.8.0",
     "js": "^0.1.0",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.544.0",
     "morgan": "^1.10.1",
     "next": "~15.2.4",
     "nodemailer": "^7.0.6",
     "prisma": "^6.16.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-hook-form": "^7.64.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
   },
